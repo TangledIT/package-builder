@@ -1,0 +1,35 @@
+#!/bin/bash
+
+version=$1
+
+# Remove existing
+rm -f packages/iri*
+
+# Download latest IRI
+curl -L https://github.com/iotaledger/iri/releases/download/v$version/iri-$version.jar -o services/iri/files/var/lib/iri/iri.jar
+
+# Create DEB package
+fpm \
+--chdir services/iri/files \
+--version $version \
+-s dir -t deb \
+-n iri \
+-a noarch \
+--depends default-jre \
+--after-install services/iri/after-install-deb.sh \
+--deb-systemd services/iri/iri.service \
+--deb-changelog services/iri/changelogs/debian \
+--package packages/ .
+
+# Create RPM package
+fpm \
+--chdir services/iri/files \
+--version $version \
+-s dir -t rpm \
+-n iri \
+-a noarch \
+--depends java-1.8.0-openjdk \
+--rpm-systemd services/iri/iri.service \
+--after-install services/iri/after-install-rpm.sh \
+--rpm-changelog services/iri/changelogs/rpm \
+--package packages/ .

@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  tangled:
+    privileged: true
+    build:
+      context: ./
+    command: '/sbin/init --'
+    volumes:
+      - ../../:/opt/tangled-repo/
+    stdin_open: true
+    tty: true

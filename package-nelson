@@ -1,0 +1,38 @@
+#!/bin/bash
+
+version=$1
+
+# Remove existing
+rm -f packages/nelson*
+
+# Update version of package
+sed -i "s/{{version}}/$version/g" services/nelson/after-install.sh
+
+# Create DEB package
+fpm \
+--chdir services/nelson/files \
+--version $version \
+-s dir -t deb \
+-n nelson \
+-a noarch \
+--depends 'nodejs >= 8.9.4' \
+--after-install services/nelson/after-install.sh \
+--after-remove services/nelson/after-remove.sh \
+--deb-systemd services/nelson/nelson.service \
+--package packages/ .
+
+# Create RPM package
+fpm \
+--chdir services/nelson/files \
+--version $version \
+-s dir -t rpm \
+-n nelson \
+-a noarch \
+--depends 'nodejs >= 8.9.4' \
+--after-install services/nelson/after-install.sh \
+--after-remove services/nelson/after-remove.sh \
+--deb-systemd services/nelson/nelson.service \
+--package packages/ .
+
+# Reset value
+sed -i "s/$version/{{version}}/g" services/nelson/after-install.sh

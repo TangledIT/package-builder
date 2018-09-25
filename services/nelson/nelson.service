@@ -1,0 +1,22 @@
+[Unit]
+Description=IOTA Nelson (By SemkoDev)
+After=network.target
+
+[Service]
+WorkingDirectory=/var/lib/nelson/
+User=iota
+PrivateDevices=yes
+ProtectSystem=full
+Type=simple
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=mixed
+KillSignal=SIGTERM
+TimeoutStopSec=60
+ExecStart=/usr/bin/nelson --getNeighbors --config /etc/nelson/nelson.ini
+SyslogIdentifier=NELSON
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
+Alias=nelson.service

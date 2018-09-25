@@ -1,0 +1,28 @@
+#!/bin/bash
+
+if [ "$1" == "build" ]
+then
+  docker-compose -f docker/$2/docker-compose.yml build
+elif [ "$1" == "start" ]
+then
+  docker-compose -f docker/$2/docker-compose.yml up -d
+elif [ "$1" == "stop" ]
+then
+  docker-compose -f docker/$2/docker-compose.yml stop
+elif [ "$1" == "ssh" ]
+then
+  docker-compose -f docker/$2/docker-compose.yml exec tangled /bin/bash /opt/tangled-repo/docker/$2/init.sh
+elif [ "$1" == "clean" ]
+then
+  docker-compose -f docker/$2/docker-compose.yml stop
+  docker-compose -f docker/$2/docker-compose.yml rm
+else
+  echo "TangledIT Package builder"
+  echo "--------------------------------"
+  echo "./tangled-docker build deb|rpm - Builds docker images from Dockerfile"
+  echo "./tangled-docker start deb|rpm - Run docker containers in background"
+  echo "./tangled-docker stop deb|rpm - Stop docker containers"
+  echo "./tangled-docker clean deb|rpm - Remove containers"
+  echo "./tangled-docker ssh deb|rpm - Access docker container"
+  echo ""
+fi

@@ -1,0 +1,12 @@
+iri (1.5.4) stable; urgency=low
+
+  * Update snapshot to 2018-09-17 17:00 UTC (See https://github.com/iotaledger/iri/pull/989)
+
+-- Alon Elmaliah <alon.elmaliah@gmail.com> Thu, 17 Sept 2018 17:00:00 +0100
+
+
+iri (1.5.3) stable; urgency=low
+
+  * Remove WalkValidator cache of tips that are below max depth (See https://github.com/iotaledger/iri/pull/903)
+
+-- Paul Handy <paul@pauldhandy.com> Thu, 2 Aug 2018 11:44:00 +0100

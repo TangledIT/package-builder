@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tangled - Information Technology</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="icon" href="/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800" rel="stylesheet">
+  </head>
+  <body>
+
+    <div id="header" class="small">
+      <canvas id="particles"></canvas>
+      <div class="content">
+        <div class="menu">
+          <a class="top" href="/">
+            <div class="logo">
+              <img src="/images/logo.svg">
+            </div>
+            <div class="company">Tangled IT</div>
+          </a>
+          <div class="links">
+            <ul>
+              <li><a href="https://tangled.it">Back to homepage</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content"><div class="bigbox style4">
+      <div class="content">
+        <h1>Repositories</h1>
+        <ul>
+          <li>
+            <p>
+              Tangled IT provides <strong>APT</strong> and <strong>Yum</strong> repositories for installing Tangle (IOTA) based software.
+              <br/><br/>
+              <strong>
+                The packages require Systemd init system, which is now the default for
+                most modern linux based operating systems.
+              </strong>
+            </p>
+          </li>
+          <li>
+            <h2>Getting started</h2>
+            <p>
+              We've tried to adhere to the standards of the linux OS and it's directory structures.
+              This means the config is stored in /etc/package-name and additional files in /var/lib/package-name.
+              If you would like to check if Systemd is installed, you can run:
+              <i>systemctl status</i>
+            </p>
+          </li>
+          <li>
+              <h2>Packages</h2>
+              <p>
+                You can install the following packages:
+                <br/><br/>
+                * iri - The IOTA reference implementation (<a href="https://github.com/iotaledger/iri/">github</a>)
+              </p>
+            </li>
+          <li>
+            <h2>APT (Debian / Ubuntu)</h2>
+            <p>
+              The first thing you'll need to do is add our repository and install the public key.
+              <code lang="bash">
+                curl -sSL https://repos.tangled.it/apt/setup.sh | sudo bash
+              </code>
+              This will execute the following code. If you prefer to do it manually you can run these lines:
+              <code lang="bash">
+                apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys B4D3B898
+                echo "deb https://repos.tangled.it/apt/ tangledit main" > /etc/apt/sources.list.d/tangledit.list
+                apt-get update
+              </code>
+              After the repository has been added you can install packages from it. For example:
+              <code lang="bash">
+                apt-get install iri
+              </code>
+            </p>
+          </li>
+          <li>
+            <h2>Yum (Redhat / CentOS)</h2>
+            <p>
+              The first thing you'll need to do is add our repository and install the public key.
+              <code lang="bash">
+                curl https://repos.tangled.it/yum/setup.sh | sudo bash
+              </code>
+              This will execute the following code. If you prefer to do it manually you can run these lines:
+              <code lang="bash">
+                rpm --import https://repos.tangled.it/repo@tangled.it.gpg.key
+
+                cat > /etc/yum.repos.d/tangledit.repo &lt;&lt;END
+                [tangledit]
+                name = TangledIT
+                baseurl = https://repos.tangled.it/yum/
+                END
+
+                yum -y update
+              </code>
+              After the repository has been added you can install packages from it. For example:
+              <code lang="bash">
+                yum install iri
+              </code>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div></div>
+    <div id="footer">
+      <div class="content">
+        <h3>
+          Tangled
+          <div class="sub">Information Technology</div>
+        </h3>
+      </div>
+    </div>
+  </body>
+</html>

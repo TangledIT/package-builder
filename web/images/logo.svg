@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="496px" height="496px" viewBox="0 0 496 496" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Logo Tangled.it BW</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo-Tangled.it-BW" stroke="#FFFFFF">
+            <g id="Logo" transform="translate(12.000000, 11.000000)">
+                <g id="Group" transform="translate(0.320312, 0.963489)">
+                    <path d="M329.945313,465.464503 L256.163085,300.708121 M201.425249,178.478036 L164.269701,95.5093594 L127.144531,12.6085193" id="Line" stroke-width="16" stroke-linecap="square"></path>
+                    <path d="M9.45703125,141.845842 L162.095707,204.027749 M311.040702,264.704925 L463.394531,326.770791" id="Line" stroke-width="16" stroke-linecap="square"></path>
+                    <path d="M9.45703125,386.661258 L169.243273,279.652331 M302.182657,190.622758 L464.445312,81.9553753" id="Line-Copy" stroke-width="16" stroke-linecap="square"></path>
+                    <path d="M162.871094,466.515213 L213.344118,312.973898 M263.985739,158.919704 L312.082031,12.6085193" id="Line-Copy-2" stroke-width="16" stroke-linecap="square"></path>
+                    <path d="M28.3710938,46.2312373 L184.256116,187.260495 M294.299187,286.816517 L447.632812,425.537525" id="Line" stroke-width="16" stroke-linecap="square"></path>
+                    <path d="M7.35546875,213.294118 L161.275805,229.923462 M313.678442,246.388837 L464.445312,262.677485" id="Line" stroke-width="16" stroke-linecap="square"></path>
+                    <ellipse id="Oval" stroke-width="45" cx="236.425781" cy="236.409736" rx="78.8085937" ry="78.8032454"></ellipse>
+                    <rect id="Rectangle" stroke-width="22" x="0" y="0" width="472.851562" height="472.819473" rx="100"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
