@@ -1,12 +1,9 @@
 # Package Builder - IOTA Reference Implementation
 
 This repository contains a package contents and scripts for IRI.
-The original source and releases can be found at:
+More information, the original source and releases can be found at:
 
-[IRI Ledger](https://github.com/iotaledger/iri)
-
-The package builder is open to anyone, so you can even build your own
-and distribute them yourself.
+[https://github.com/iotaledger/iri](https://github.com/iotaledger/iri)
 
 ## Table of Contents
 - [Files](#files)
@@ -25,7 +22,7 @@ and distribute them yourself.
 The config files for the IRI are stored in /etc/iri/. There you can modify the iri default config and java properties separately. The java properties set the amount of memory IRI for example. The iri.ini
 file has the following properties:
 
-```
+```ini
 [IRI]
 PORT = 14265
 UDP_RECEIVER_PORT = 14600
@@ -51,7 +48,7 @@ More information about the properties can be found in the [IRI repository](https
 
 The IRI can be managed by Systemd, with the following commands:
 
-```
+```bash
 # Start
 systemctl start iri
 
@@ -69,6 +66,6 @@ systemctl status iri
 
 Systemd services stores the log files in syslog (/var/log/syslog). If you like to display logs of the iri you can use the following command:
 
-```
+```bash
 journalctl -u iri.service
 ```

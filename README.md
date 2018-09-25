@@ -3,22 +3,29 @@
 This repository contains a package builder for IOTA / Tangle based services. It utilises Docker and FPM to build Debian and Redhat packages. These packages are distributed through the TangledIT repositories which you can find [here](https://repos.tangled.it).
 
 The package builder is open to anyone, so you can even build your own
-and distribute them yourself.
+and distribute them yourself. **Tangled IT and this repository is in no way affiliated with the IOTA Foundation.**
 
 ## Table of Contents
 - [Requirements](#requirements)
+- [Services available](#services-available)
 - [Getting started](#getting-started)
 - [Todo](#todo)
 - [Contributing](#contributing)
 
 ## Requirements
-- Docker
+- Docker - [Install](https://docs.docker.com/install/)
+
+## Services available
+
+Currently we provide packages for:
+
+- IRI - [More info](https://github.com/TangledIT/package-builder/tree/master/services/iri)
 
 ## Getting started
 
 Clone the repo and cd into the directory. Run ./tangled-docker to see the possible commands. The following instructions work for building the IRI package:
 
-```
+```bash
 # Build, run and enter the docker container
 ./tangled-docker build deb
 ./tangled-docker start deb
