@@ -8,8 +8,12 @@ else
 fi
 
 # Chown iota user to library folder
-mkdir -p /var/lib/nelson
-chown -R iota:iota /var/lib/nelson
+mkdir -p /var/lib/field
+chown -R iota:iota /var/lib/field
+
+# Requires iota user home dir
+mkdir -p /home/iota
+chown -R iota:iota /home/iota
 
 # Install NPM package
-npm install -g @semkodev/nelson.cli@{{version}}
+npm install -g @semkodev/field.cli@{{version}}

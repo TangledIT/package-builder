@@ -21,6 +21,10 @@ Currently we provide packages for:
 
 - IRI - [More info](https://github.com/TangledIT/package-builder/tree/master/services/iri)
 
+- Nelson (By SemkoDev) - [More info](https://gitlab.com/semkodev/nelson.cli)
+
+- Field (By SemkoDev) - [More info](https://gitlab.com/semkodev/field.cli)
+
 ## Getting started
 
 Clone the repo and cd into the directory. Run ./tangled-docker to see the possible commands. The following instructions work for building the IRI package:

@@ -16,9 +16,9 @@ fpm \
 -n iri \
 -a noarch \
 --depends default-jre \
---after-install services/iri/after-install-deb.sh \
+--after-install services/iri/after-install.sh \
 --deb-systemd services/iri/iri.service \
---deb-changelog services/iri/changelogs/debian \
+--deb-changelog services/iri/changelogs/deb \
 --package packages/ .
 
 # Create RPM package
@@ -30,6 +30,6 @@ fpm \
 -a noarch \
 --depends java-1.8.0-openjdk \
 --rpm-systemd services/iri/iri.service \
---after-install services/iri/after-install-rpm.sh \
+--after-install services/iri/after-install.sh \
 --rpm-changelog services/iri/changelogs/rpm \
 --package packages/ .

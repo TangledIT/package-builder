@@ -6,10 +6,14 @@ More information, the original source and releases can be found at:
 [https://github.com/iotaledger/iri](https://github.com/iotaledger/iri)
 
 ## Table of Contents
+- [Requirements](#requirements)
 - [Files](#files)
 - [Configuration](#configuration)
 - [Service management](#service-management)
 - [Logs](#logs)
+
+## Requirements
+The IRI requires Java, which is added as a subdependency of the package. It will install 'default java runtime environment (JRE)' on debian based operating system and 'Java OpenJDK' on redhat based operating syetems.
 
 ## Files
 - /etc/iri/iri.ini

@@ -7,9 +7,8 @@ else
   adduser --system --no-create-home --group iota
 fi
 
-# Chown iota user to library folder
-mkdir -p /var/lib/nelson
-chown -R iota:iota /var/lib/nelson
+# Create iri db
+mkdir -p /var/lib/iri/db
 
-# Install NPM package
-npm install -g @semkodev/nelson.cli@{{version}}
+# Set iota user as owner of lib folder
+chown -R iota:iota /var/lib/iri
