@@ -441,7 +441,7 @@ input[type=submit] {
         #footer .content h3 {
           margin: 0 auto;
           text-align: center;
-          margin-bottom: 60px; } }
+          padding-bottom: 60px; } }
       #footer .content h3 .sub {
         font-size: 1.2rem;
         letter-spacing: -0.7px; }
