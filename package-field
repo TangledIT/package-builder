@@ -32,7 +32,7 @@ fpm \
 --depends 'nodejs >= 8.9.4' \
 --after-install services/field/after-install.sh \
 --after-remove services/field/after-remove.sh \
---deb-systemd services/field/field.service \
+--rpm-systemd services/field/field.service \
 --rpm-changelog services/field/changelogs/rpm \
 --package packages/ .
 

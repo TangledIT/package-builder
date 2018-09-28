@@ -32,7 +32,7 @@ fpm \
 --depends 'nodejs >= 8.9.4' \
 --after-install services/nelson/after-install.sh \
 --after-remove services/nelson/after-remove.sh \
---deb-systemd services/nelson/nelson.service \
+--rpm-systemd services/nelson/nelson.service \
 --rpm-changelog services/nelson/changelogs/rpm \
 --package packages/ .
 
