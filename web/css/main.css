@@ -428,6 +428,7 @@ input[type=submit] {
   #footer .content {
     padding-top: 250px;
     transform: rotate(180deg);
+    padding-bottom: 50px;
     width: 90%;
     margin: 0 auto;
     color: white;
