@@ -21,9 +21,9 @@ Currently we provide packages for:
 
 - IRI - [More info](https://github.com/TangledIT/package-builder/tree/master/services/iri)
 
-- Nelson (By SemkoDev) - [More info](https://gitlab.com/semkodev/nelson.cli)
+- Nelson (By SemkoDev) - [More info](https://github.com/TangledIT/package-builder/tree/master/services/nelson)
 
-- Field (By SemkoDev) - [More info](https://gitlab.com/semkodev/field.cli)
+- Field (By SemkoDev) - [More info](https://github.com/TangledIT/package-builder/tree/master/services/field)
 
 ## Getting started
 
