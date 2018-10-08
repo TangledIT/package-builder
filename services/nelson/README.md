@@ -12,10 +12,6 @@ More information, the original source and releases can be found at:
 - [Service management](#service-management)
 - [Logs](#logs)
 
-## Requirements
-Field requires nodejs 8 or higher installe. This version cannot be found in the default list. If you want to install nodejs you can learn how at:
-[https://nodejs.org/en/download/package-manager/](https://nodejs.org/en/download/package-manager/)
-
 ## Files
 - /etc/nelson/nelson.ini
 

@@ -10,6 +10,3 @@ fi
 # Chown iota user to library folder
 mkdir -p /var/lib/nelson
 chown -R iota:iota /var/lib/nelson
-
-# Install NPM package
-npm install -g @semkodev/nelson.cli@{{version}}

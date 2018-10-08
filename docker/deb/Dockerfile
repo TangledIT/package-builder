@@ -18,8 +18,8 @@ RUN apt-get update
 # Install GnuPG and Curl
 RUN apt-get -y install gnupg curl
 
-# Install NodeJS 8.x Apt repo
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash
+# Install NodeJS 10.x Apt repo
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
 
 # Update APT Repo
 RUN apt-get update

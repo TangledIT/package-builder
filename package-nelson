@@ -2,11 +2,29 @@
 
 version=$1
 
+# Clone nelson repo
+git clone https://gitlab.com/semkodev/nelson.cli.git --branch v$version --single-branch
+
+# Install required packages
+npm install -g pkg yarn
+
+# Change into nelson repo
+cd nelson.cli
+
+# Install packages
+yarn install --pure-lockfile
+
+# Create executable
+pkg --targets=node10-linux-x64 --output ../services/nelson/files/usr/bin/nelson dist/nelson.js
+
+# Change out of the nelson repo
+cd ..
+
+# Remove git repo
+rm -Rf nelson.cli
+
 # Remove existing
 rm -f packages/nelson*
-
-# Update version of package
-sed -i "s/{{version}}/$version/g" services/nelson/after-install.sh
 
 # Create DEB package
 fpm \
@@ -15,7 +33,6 @@ fpm \
 -s dir -t deb \
 -n nelson \
 -a noarch \
---depends 'nodejs >= 8.9.4' \
 --after-install services/nelson/after-install.sh \
 --after-remove services/nelson/after-remove.sh \
 --deb-systemd services/nelson/nelson.service \
@@ -29,12 +46,12 @@ fpm \
 -s dir -t rpm \
 -n nelson \
 -a noarch \
---depends 'nodejs >= 8.9.4' \
 --after-install services/nelson/after-install.sh \
 --after-remove services/nelson/after-remove.sh \
---rpm-systemd services/nelson/nelson.service \
+--deb-systemd services/nelson/nelson.service \
 --rpm-changelog services/nelson/changelogs/rpm \
 --package packages/ .
 
-# Reset value
-sed -i "s/$version/{{version}}/g" services/nelson/after-install.sh
+# Clean binary
+rm services/nelson/files/usr/bin/nelson
+touch services/nelson/files/usr/bin/nelson

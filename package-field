@@ -2,11 +2,29 @@
 
 version=$1
 
+# Clone nelson repo
+git clone https://gitlab.com/semkodev/field.cli.git --branch v$version --single-branch
+
+# Install required packages
+npm install -g pkg yarn
+
+# Change into field repo
+cd field.cli
+
+# Install packages
+yarn install --pure-lockfile
+
+# Create executable
+pkg --targets=node10-linux-x64 --output ../services/field/files/usr/bin/field dist/field.js
+
+# Change out of the field repo
+cd ..
+
+# Remove git repo
+rm -Rf field.cli
+
 # Remove existing
 rm -f packages/field*
-
-# Update version of package
-sed -i "s/{{version}}/$version/g" services/field/after-install.sh
 
 # Create DEB package
 fpm \
@@ -15,7 +33,6 @@ fpm \
 -s dir -t deb \
 -n field \
 -a noarch \
---depends 'nodejs >= 8.9.4' \
 --after-install services/field/after-install.sh \
 --after-remove services/field/after-remove.sh \
 --deb-systemd services/field/field.service \
@@ -29,12 +46,12 @@ fpm \
 -s dir -t rpm \
 -n field \
 -a noarch \
---depends 'nodejs >= 8.9.4' \
 --after-install services/field/after-install.sh \
 --after-remove services/field/after-remove.sh \
 --rpm-systemd services/field/field.service \
 --rpm-changelog services/field/changelogs/rpm \
 --package packages/ .
 
-# Reset value
-sed -i "s/$version/{{version}}/g" services/field/after-install.sh
+# Clean binary
+rm services/field/files/usr/bin/field
+touch services/field/files/usr/bin/field

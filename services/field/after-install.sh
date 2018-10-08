@@ -14,6 +14,3 @@ chown -R iota:iota /var/lib/field
 # Requires iota user home dir
 mkdir -p /home/iota
 chown -R iota:iota /home/iota
-
-# Install NPM package
-npm install -g @semkodev/field.cli@{{version}}
