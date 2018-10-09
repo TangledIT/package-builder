@@ -19,6 +19,9 @@ fpm \
 --after-install services/iri/after-install.sh \
 --deb-systemd services/iri/iri.service \
 --deb-changelog services/iri/changelogs/deb \
+--maintainer "<iota@foundation>" \
+--description "IRI Reference Implementation from the IOTA Foundation" \
+--url "https://github.com/iotaledger/iri" \
 --package packages/ .
 
 # Create RPM package
@@ -32,4 +35,7 @@ fpm \
 --rpm-systemd services/iri/iri.service \
 --after-install services/iri/after-install.sh \
 --rpm-changelog services/iri/changelogs/rpm \
+--maintainer "<iota@foundation>" \
+--description "IRI Reference Implementation from the IOTA Foundation" \
+--url "https://github.com/iotaledger/iri" \
 --package packages/ .

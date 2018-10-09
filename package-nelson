@@ -37,6 +37,9 @@ fpm \
 --after-remove services/nelson/after-remove.sh \
 --deb-systemd services/nelson/nelson.service \
 --deb-changelog services/nelson/changelogs/deb \
+--maintainer "<semkodev@deviota>" \
+--description "Nelson is a IRI neighbor discovery service created by SemkoDev" \
+--url "https://gitlab.com/semkodev/nelson.cli" \
 --package packages/ .
 
 # Create RPM package
@@ -50,6 +53,9 @@ fpm \
 --after-remove services/nelson/after-remove.sh \
 --deb-systemd services/nelson/nelson.service \
 --rpm-changelog services/nelson/changelogs/rpm \
+--maintainer "<semkodev@deviota>" \
+--description "Nelson is a IRI neighbor discovery service created by SemkoDev" \
+--url "https://gitlab.com/semkodev/nelson.cli" \
 --package packages/ .
 
 # Clean binary
