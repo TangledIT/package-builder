@@ -81,7 +81,7 @@ html {
 html,
 body {
   background-color: #fff;
-  color: #898989; }
+  color: #6e6e6e; }
 
 *,
 *::before,
@@ -189,7 +189,7 @@ button::-moz-focus-inner {
             .bigbox.style1 .content .boxes .right {
               margin-left: initial; } }
   .bigbox.style4 {
-    color: #898989; }
+    color: #6e6e6e; }
     .bigbox.style4 .content {
       text-align: left;
       display: block; }
@@ -238,9 +238,9 @@ textarea {
   height: 200px; }
 
 textarea, input {
-  border: 1px solid #898989;
+  border: 1px solid #6e6e6e;
   padding: 10px;
-  color: #898989;
+  color: #6e6e6e;
   font-size: 1.2rem;
   display: block;
   margin-bottom: 1rem;
@@ -252,7 +252,7 @@ textarea, input {
     border: 1px solid #bbb; }
 
 input[type=submit] {
-  border: 1px solid #898989;
+  border: 1px solid #6e6e6e;
   padding: 10px;
   display: block; }
   input[type=submit]:hover {
@@ -340,7 +340,7 @@ input[type=submit] {
               -webkit-transform: rotate(45deg) translate(-8px, -8px);
               transform: rotate(45deg) translate(-8px, -8px); }
             #header .content .menu .links.show #burger div {
-              background-color: #898989; }
+              background-color: #6e6e6e; }
           #header .content .menu .links.show ul {
             text-align: center;
             width: 100%;
@@ -350,7 +350,7 @@ input[type=submit] {
               padding: 10px;
               margin: 0; }
               #header .content .menu .links.show ul li a {
-                color: #898989;
+                color: #6e6e6e;
                 font-size: 1.3rem;
                 text-shadow: none; }
                 #header .content .menu .links.show ul li a:hover {
@@ -498,7 +498,7 @@ input[type=submit] {
  */
 body {
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #898989;
+  color: #6e6e6e;
   margin: 0;
   padding: 0;
   min-width: 770px;
@@ -516,10 +516,10 @@ body {
   margin-top: 0;
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
-  color: #898989; }
+  color: #6e6e6e; }
 
 .content strong {
-  color: #898989;
+  color: #6e6e6e;
 }
 
 p {
