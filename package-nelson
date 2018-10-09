@@ -38,7 +38,7 @@ fpm \
 --deb-systemd services/nelson/nelson.service \
 --deb-changelog services/nelson/changelogs/deb \
 --maintainer "<semkodev@deviota>" \
---description "Nelson is a IRI neighbor discovery service created by SemkoDev" \
+--description "Nelson is a IRI neighbor discovery service created by Deviota" \
 --url "https://gitlab.com/semkodev/nelson.cli" \
 --package packages/ .
 
@@ -54,7 +54,7 @@ fpm \
 --deb-systemd services/nelson/nelson.service \
 --rpm-changelog services/nelson/changelogs/rpm \
 --maintainer "<semkodev@deviota>" \
---description "Nelson is a IRI neighbor discovery service created by SemkoDev" \
+--description "Nelson is a IRI neighbor discovery service created by Deviota" \
 --url "https://gitlab.com/semkodev/nelson.cli" \
 --package packages/ .
 
