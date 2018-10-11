@@ -1,5 +1,19 @@
-iri (1.5.4) stable; urgency=low
+iri (1.5.5) stable; urgency=low
 
-  * Update snapshot to 2018-09-17 17:00 UTC (See https://github.com/iotaledger/iri/pull/989)
+  * Javadoc on API command methods (#943)
+  * Parse case insensitive boolean text (#966)
+  * re-enable `--remote` flag - opens API interface to all hosts (#953)
+  * fix generics in RocksDbPersistenceProvider (#956)
+  * Fix milestone start index default value (#941)
+  * Enable batch deletion in rocksDB (#939)
+  * Refactor Configuration (#910)
+  * Some TransactionValidator fixes regarding solidity (#913)
+  * Remove checkSolidity mocks (#908)
+  * Fix: TransactionValidator instance based / TransactionRequester fixed (#914)
+  * Changed Dockerfile to source java and maven from precompiled docker containers. (#929)
+  * Fix grammar in API responses (#884)
+  * Fix error in log statement (#829)
+  * Move sleep inside spawnSolidTransactionsPropagation loop (#911)
+  * Fix solidity propagation from bottom to top (#907)
 
--- Alon Elmaliah <alon.elmaliah@gmail.com> Thu, 17 Sept 2018 17:00:00 +0100
+-- GalRogozinski <galrogogit@gmail.com> Thu, 11 Oct 2018 15:00:00 +0100

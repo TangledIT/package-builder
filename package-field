@@ -15,7 +15,7 @@ cd field.cli
 yarn install --pure-lockfile
 
 # Create executable
-pkg --targets=node10-linux-x64 --output ../services/field/files/usr/bin/field dist/field.js
+pkg --targets=node10-linux-x64 --output ../services/field/files/usr/bin/field dist/index.js
 
 # Change out of the field repo
 cd ..
