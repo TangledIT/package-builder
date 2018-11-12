@@ -2,6 +2,9 @@
 
 version=$1
 
+# Install JDK
+apt-get install default-jdk
+
 # Remove existing
 rm -f packages/ict*
 
@@ -9,11 +12,10 @@ rm -f packages/ict*
 git clone https://github.com/Come-from-beyond/Ict.git /tmp/ict
 
 # Compile classes
-cd /tmp/ict
-javac src/cfb/ict/*.java
+javac /tmp/ict/src/cfb/ict/*.java
 
 # Copy compiled classes
-cp src/cfb/ict/*.class /opt/tangled-repo/services/ict/files/var/lib/ict/
+cp /tmp/ict/src/cfb/ict/*.class /opt/tangled-repo/services/ict/files/var/lib/ict/cfb/ict/
 rm -Rf /tmp/ict
 
 # Create DEB package
@@ -28,7 +30,7 @@ fpm \
 --deb-systemd services/ict/ict.service \
 --deb-changelog services/ict/changelogs/deb \
 --maintainer "<iota@foundation>" \
---description "Iota Controller AgentT from Come-From-Beyond" \
+--description "Iota Controller AgentT" \
 --url "https://github.com/Come-from-Beyond/Ict" \
 --package packages/ .
 
@@ -44,6 +46,8 @@ fpm \
 --after-install services/ict/after-install.sh \
 --rpm-changelog services/ict/changelogs/rpm \
 --maintainer "<iota@foundation>" \
---description "Iota Controller AgentT from Come-From-Beyond" \
+--description "Iota Controller AgentT" \
 --url "https://github.com/Come-from-Beyond/Ict" \
 --package packages/ .
+
+rm -rf /opt/tangled-repo/services/ict/files/var/lib/ict/cfb/ict/*.class

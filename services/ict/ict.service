@@ -1,9 +1,9 @@
 [Unit]
-Description=IRI (IOTA) full node
+Description=Iota Controller AgenT (IOTA)
 After=network.target
 
 [Service]
-WorkingDirectory=/var/lib/iri/
+WorkingDirectory=/var/lib/ict/
 User=iota
 PrivateDevices=yes
 ProtectSystem=full
@@ -12,11 +12,11 @@ ExecReload=/bin/kill -HUP $MAINPID
 KillMode=mixed
 KillSignal=SIGTERM
 TimeoutStopSec=60
-ExecStart=/bin/bash -c "/usr/bin/java $(tr '\n' ' ' < /etc/iri/java.properties) -jar /var/lib/iri/iri.jar -c /etc/iri/iri.ini"
-SyslogIdentifier=IRI
+ExecStart=/bin/bash -c "/usr/bin/java cfb.ict.Ict /etc/ict/ict.properties"
+SyslogIdentifier=ICT
 Restart=on-failure
 RestartSec=30
 
 [Install]
 WantedBy=multi-user.target
-Alias=iri.service
+Alias=ict.service
