@@ -16,8 +16,8 @@ More information, the original source and releases can be found at:
 The IRI requires Java, which is added as a subdependency of the package. It will install 'default java runtime environment (JRE)' on debian based operating system and 'Java OpenJDK' on redhat based operating syetems.
 
 ## Files
-- /etc/iri/iri.ini
-- /etc/iri/java.properties
+- /usr/share/iri.ini.defaults
+- /usr/share/java.properties.defaults
 - /usr/bin/iri_install_db
 - /var/lib/iri/iri.jar
 
