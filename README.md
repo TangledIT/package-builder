@@ -35,8 +35,8 @@ Clone the repo and cd into the directory. Run ./tangled-docker to see the possib
 ./tangled-docker start deb
 ./tangled-docker ssh deb
 
-# Inside the container run to build release 1.5.5
-./package-iri 1.5.5
+# Inside the container run to build release 1.5.6
+./package-iri 1.5.6
 
 # The RPM and DEB packages can be found in the packages/ folder
 ```

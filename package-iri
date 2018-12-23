@@ -6,7 +6,7 @@ version=$1
 rm -f packages/iri*
 
 # Download latest IRI
-curl -L https://github.com/iotaledger/iri/releases/download/v$version/iri-$version.jar -o services/iri/files/var/lib/iri/iri.jar
+curl -L https://github.com/iotaledger/iri/releases/download/v$version/iri-$version-RELEASE.jar -o services/iri/files/var/lib/iri/iri.jar
 
 # Create DEB package
 fpm \
