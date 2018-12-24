@@ -3,7 +3,7 @@
 This repository contains a package contents and scripts for ICT.
 More information, the original source and releases can be found at:
 
-[https://github.com/Come-from-Beyond/Ict/](https://github.com/Come-from-Beyond/Ict/)
+[https://github.com/iotaledger/ict](https://github.com/iotaledger/ict)
 
 ## Table of Contents
 - [Requirements](#requirements)
@@ -16,32 +16,25 @@ More information, the original source and releases can be found at:
 The ICT requires Java, which is added as a subdependency of the package. It will install 'default java runtime environment (JRE)' on debian based operating system and 'Java OpenJDK' on redhat based operating syetems.
 
 ## Files
-- /etc/ict/ict.properties
-- /var/lib/ict/cfb/ict/*.class
+- /usr/share/ict/ict.cfg.defaults
+- /var/lib/ict/ict.jar
 
 ## Configuration
 
-The config files for the ICT are stored in /etc/ict/. The ict.properties
+The config files for the ICT are stored in /etc/ict/. The ict.cfg
 file has the following properties:
 
 ```ini
-// Iota Controlled AgenT
-
-host = 0.0.0.0
-port = 14265
-
-// Neighbor 1
-neighborAHost =
-neighborAPort = 14265
-
-// Neighbor 2
-neighborBHost =
-neighborBPort = 14265
-
-// Neighbor 3
-neighborCHost =
-neighborCPort = 14265
-
+name=ict
+ixis=
+port=1337
+log_round_duration=60000
+ixi_enabled=false
+spam_enabled=false
+min_forward_delay=0
+host=0.0.0.0
+neighbors=
+max_forward_delay=200
 ```
 
 ## Service management

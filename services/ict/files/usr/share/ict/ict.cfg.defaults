@@ -1,0 +1,10 @@
+name=ict
+ixis=
+port=1337
+log_round_duration=60000
+ixi_enabled=false
+spam_enabled=false
+min_forward_delay=0
+host=0.0.0.0
+neighbors=
+max_forward_delay=200

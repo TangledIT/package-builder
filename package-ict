@@ -2,21 +2,10 @@
 
 version=$1
 
-# Install JDK
-apt-get install default-jdk
-
 # Remove existing
 rm -f packages/ict*
 
-# Clone ICT repo
-git clone https://github.com/Come-from-beyond/Ict.git /tmp/ict
-
-# Compile classes
-javac /tmp/ict/src/cfb/ict/*.java
-
-# Copy compiled classes
-cp /tmp/ict/src/cfb/ict/*.class /opt/tangled-repo/services/ict/files/var/lib/ict/cfb/ict/
-rm -Rf /tmp/ict
+curl -L https://github.com/iotaledger/ict/releases/download/$version/ict-$version.jar -o services/ict/files/var/lib/ict/ict.jar
 
 # Create DEB package
 fpm \
@@ -28,10 +17,9 @@ fpm \
 --depends default-jre \
 --after-install services/ict/after-install.sh \
 --deb-systemd services/ict/ict.service \
---deb-changelog services/ict/changelogs/deb \
 --maintainer "<iota@foundation>" \
 --description "Iota Controller AgentT" \
---url "https://github.com/Come-from-Beyond/Ict" \
+--url "https://github.com/iotaledger/ict/" \
 --package packages/ .
 
 # Create RPM package
@@ -44,10 +32,7 @@ fpm \
 --depends java-1.8.0-openjdk \
 --rpm-systemd services/ict/ict.service \
 --after-install services/ict/after-install.sh \
---rpm-changelog services/ict/changelogs/rpm \
 --maintainer "<iota@foundation>" \
 --description "Iota Controller AgentT" \
---url "https://github.com/Come-from-Beyond/Ict" \
+--url "https://github.com/iotaledger/ict/" \
 --package packages/ .
-
-rm -rf /opt/tangled-repo/services/ict/files/var/lib/ict/cfb/ict/*.class

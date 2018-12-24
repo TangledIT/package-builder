@@ -7,8 +7,13 @@ else
   adduser --system --no-create-home --group iota
 fi
 
-# Create ict folder
-mkdir -p /var/lib/ict/
+# Create ict config folder
+mkdir -p /etc/ict
 
 # Set iota user as owner of lib folder
 chown -R iota:iota /var/lib/ict
+
+# Copy defaults config file if not exits
+if [ ! -f /etc/ict/ict.cfg ]; then
+    cp /usr/share/ict/ict.cfg.defaults /etc/ict/ict.cfg
+fi
