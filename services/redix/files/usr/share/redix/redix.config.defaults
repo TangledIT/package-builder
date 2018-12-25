@@ -1,0 +1,5 @@
+REDIX_ENGINE="badger"
+REDIX_HTTP_ADDR="localhost:7090"
+REDIX_RESP_ADDR="localhost:6380"
+REDIX_STORAGE="/var/lib/redix/"
+REDIX_WORKERS=16

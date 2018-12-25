@@ -7,7 +7,7 @@ source "/etc/profile.d/rvm.sh"
 cd /opt/tangled-repo/
 
 # Run bundler to install FPM gem
-bundle
+bundle --force
 
 # Run bash shell
 /bin/bash

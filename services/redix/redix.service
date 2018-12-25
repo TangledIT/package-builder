@@ -1,0 +1,28 @@
+[Unit]
+Description=Redix Key-Value store
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/redix/redix.config
+WorkingDirectory=/var/lib/redix/
+User=redix
+PrivateDevices=yes
+ProtectSystem=full
+Type=simple
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=mixed
+KillSignal=SIGTERM
+TimeoutStopSec=60
+ExecStart=/usr/bin/redix-server \
+  -engine ${REDIX_ENGINE} \
+  -http-addr ${REDIX_HTTP_ADDR} \
+  -resp-addr ${REDIX_RESP_ADDR} \
+  -storage ${REDIX_STORAGE} \
+  -workers ${REDIX_WORKERS}
+SyslogIdentifier=Redix
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
+Alias=redix.service
