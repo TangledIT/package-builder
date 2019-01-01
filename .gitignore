@@ -3,3 +3,4 @@
 *.jar
 *.rpm
 Gemfile.lock
+/services/redix/files/usr/bin/redix-server

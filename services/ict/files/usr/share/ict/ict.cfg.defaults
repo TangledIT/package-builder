@@ -1,10 +1,12 @@
+max_tx_rel=1000
+max_tx_abs=5
 name=ict
-ixis=
 port=1337
-log_round_duration=60000
+round_duration=60000
 ixi_enabled=false
+tangle_capacity=10000
 spam_enabled=false
 min_forward_delay=0
-host=0.0.0.0
 neighbors=
+host=0.0.0.0
 max_forward_delay=200
