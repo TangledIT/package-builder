@@ -21,9 +21,13 @@ Currently we provide packages for:
 
 - IRI - [More info](https://github.com/TangledIT/package-builder/tree/master/services/iri)
 
+- ICT - [More info](https://github.com/TangledIT/package-builder/tree/master/services/ict)
+
 - Nelson (By SemkoDev) - [More info](https://github.com/TangledIT/package-builder/tree/master/services/nelson)
 
 - Field (By SemkoDev) - [More info](https://github.com/TangledIT/package-builder/tree/master/services/field)
+
+- Redix (By alash3al) - [More info](https://github.com/TangledIT/package-builder/tree/master/services/redix)
 
 ## Getting started
 
