@@ -1,0 +1,38 @@
+#!/bin/bash
+
+version=$1
+
+# Remove existing
+rm -f packages/report-ixi*
+
+curl -L https://github.com/trifel/Report.ixi/releases/download/$version/report.ixi-$version.jar -o services/report-ixi/files/var/lib/ixi/report-ixi.jar
+
+# Create DEB package
+fpm \
+--chdir services/report-ixi/files \
+--version $version \
+-s dir -t deb \
+-n report-ixi \
+-a noarch \
+--depends default-jre \
+--after-install services/report-ixi/after-install.sh \
+--deb-systemd services/report-ixi/report-ixi.service \
+--maintainer "<trifel>" \
+--description "IXI plugin to report node information" \
+--url "https://github.com/trifel/Report.ixi" \
+--package packages/ .
+
+# Create RPM package
+fpm \
+--chdir services/report-ixi/files \
+--version $version \
+-s dir -t rpm \
+-n report-ixi \
+-a noarch \
+--depends java-1.8.0-openjdk \
+--rpm-systemd services/report-ixi/report-ixi.service \
+--after-install services/report-ixi/after-install.sh \
+--maintainer "<trifel>" \
+--description "IXI plugin to report node information" \
+--url "https://github.com/trifel/Report.ixi" \
+--package packages/ .
