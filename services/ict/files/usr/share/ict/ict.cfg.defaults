@@ -1,11 +1,11 @@
-max_tx_rel=1000
-max_tx_abs=5
 name=ict
+gui_enabled=true
+gui_port=2187
 port=1337
 round_duration=60000
-ixi_enabled=false
+gui_password=change_me_now
+anti_spam_abs=1000
 tangle_capacity=10000
-spam_enabled=false
 min_forward_delay=0
 neighbors=
 host=0.0.0.0
