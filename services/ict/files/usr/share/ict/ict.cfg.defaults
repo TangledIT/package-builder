@@ -1,6 +1,7 @@
 name=ict
 gui_enabled=true
 gui_port=2187
+max_heap_size=1.01
 port=1337
 round_duration=60000
 gui_password=change_me_now
