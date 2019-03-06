@@ -1,0 +1,39 @@
+#!/bin/bash
+
+version=$1
+
+# Remove existing
+rm -f packages/cliri*
+
+# Download latest IRI
+curl -L https://github.com/iotaledger/cliri/releases/download/v$version/cliri-$version.jar -o services/cliri/files/var/lib/cliri/cliri.jar
+
+# Create DEB package
+fpm \
+--chdir services/cliri/files \
+--version $version \
+-s dir -t deb \
+-n cliri \
+-a noarch \
+--depends openjdk-8-jre-headless \
+--after-install services/cliri/after-install.sh \
+--deb-systemd services/cliri/cliri.service \
+--maintainer "<iota@foundation>" \
+--description "Coo-Less IRI Reference Implementation from the IOTA Foundation" \
+--url "https://github.com/iotaledger/cliri" \
+--package packages/ .
+
+# Create RPM package
+fpm \
+--chdir services/cliri/files \
+--version $version \
+-s dir -t rpm \
+-n cliri \
+-a noarch \
+--depends java-1.8.0-openjdk-headless \
+--rpm-systemd services/cliri/cliri.service \
+--after-install services/cliri/after-install.sh \
+--maintainer "<iota@foundation>" \
+--description "Coo-Less IRI Reference Implementation from the IOTA Foundation" \
+--url "https://github.com/iotaledger/cliri" \
+--package packages/ .

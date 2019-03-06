@@ -1,0 +1,17 @@
+[CLIRI]
+PORT = 15265
+UDP_RECEIVER_PORT = 16600
+TCP_RECEIVER_PORT = 17600
+API_HOST = 0.0.0.0
+IXI_DIR = /var/lib/cliri/ixi
+HEADLESS = true
+DEBUG = false
+TESTNET = false
+DB_PATH = /var/lib/cliri/db
+RESCAN_DB = false
+ZMQ_ENABLED = true
+ZMQ_PORT = 5557
+
+REMOTE_LIMIT_API = "removeNeighbors, addNeighbors, getNeighbors, setApiRateLimit"
+
+NEIGHBORS =

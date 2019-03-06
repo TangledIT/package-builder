@@ -21,6 +21,8 @@ Currently we provide packages for:
 
 - IRI - [More info](https://github.com/TangledIT/package-builder/tree/master/services/iri)
 
+- CLIRI - [More info](https://github.com/TangledIT/package-builder/tree/master/services/cliri)
+
 - ICT - [More info](https://github.com/TangledIT/package-builder/tree/master/services/ict)
 
 - Nelson (By SemkoDev) - [More info](https://github.com/TangledIT/package-builder/tree/master/services/nelson)
@@ -39,8 +41,8 @@ Clone the repo and cd into the directory. Run ./tangled-docker to see the possib
 ./tangled-docker start deb
 ./tangled-docker ssh deb
 
-# Inside the container run to build release 1.5.6
-./package-iri 1.5.6
+# Inside the container run to build release 1.6.1
+./package-iri 1.6.1
 
 # The RPM and DEB packages can be found in the packages/ folder
 ```

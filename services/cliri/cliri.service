@@ -1,0 +1,22 @@
+[Unit]
+Description=Coo-Less IRI (IOTA) full node
+After=network.target
+
+[Service]
+WorkingDirectory=/var/lib/cliri/
+User=iota
+PrivateDevices=yes
+ProtectSystem=full
+Type=simple
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=mixed
+KillSignal=SIGTERM
+TimeoutStopSec=60
+ExecStart=/bin/bash -c "/usr/bin/java $(tr '\n' ' ' < /etc/cliri/java.properties) -jar /var/lib/cliri/cliri.jar -c /etc/cliri/cliri.ini"
+SyslogIdentifier=CLIRI
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
+Alias=cliri.service
