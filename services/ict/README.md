@@ -21,19 +21,22 @@ The ICT requires Java, which is added as a subdependency of the package. It will
 
 ## Configuration
 
-The config files for the ICT are stored in /etc/ict/. The ict.cfg
-file has the following properties:
+The config files for the ICT are stored in /var/lib/ict/ and symlinked to
+/etc/ict/ict.cfg. The ict.cfg file has the following properties:
 
 ```ini
 name=ict
-ixis=
+gui_enabled=true
+gui_port=2187
+max_heap_size=1.01
 port=1337
-log_round_duration=60000
-ixi_enabled=false
-spam_enabled=false
+round_duration=60000
+gui_password=change_me_now
+anti_spam_abs=1000
+tangle_capacity=10000
 min_forward_delay=0
-host=0.0.0.0
 neighbors=
+host=0.0.0.0
 max_forward_delay=200
 ```
 

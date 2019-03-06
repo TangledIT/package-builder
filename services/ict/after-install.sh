@@ -14,6 +14,7 @@ mkdir -p /etc/ict
 chown -R iota:iota /var/lib/ict
 
 # Copy defaults config file if not exits
-if [ ! -f /etc/ict/ict.cfg ]; then
-    cp /usr/share/ict/ict.cfg.defaults /etc/ict/ict.cfg
+if [ ! -f /var/lib/ict/ict.cfg ]; then
+    cp /usr/share/ict/ict.cfg.defaults /var/lib/ict/ict.cfg
+    ln -sf /var/lib/ict/ict.cfg /etc/ict/ict.cfg
 fi
