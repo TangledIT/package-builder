@@ -15,7 +15,7 @@ fpm \
 -s dir -t deb \
 -n iri \
 -a noarch \
---depends default-jre \
+--depends openjdk-8-jre-headless \
 --after-install services/iri/after-install.sh \
 --deb-systemd services/iri/iri.service \
 --deb-changelog services/iri/changelogs/deb \
@@ -31,7 +31,7 @@ fpm \
 -s dir -t rpm \
 -n iri \
 -a noarch \
---depends java-1.8.0-openjdk \
+--depends java-1.8.0-openjdk-headless \
 --rpm-systemd services/iri/iri.service \
 --after-install services/iri/after-install.sh \
 --rpm-changelog services/iri/changelogs/rpm \

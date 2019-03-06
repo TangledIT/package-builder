@@ -14,7 +14,7 @@ fpm \
 -s dir -t deb \
 -n ict \
 -a noarch \
---depends default-jre \
+--depends openjdk-8-jre-headless \
 --after-install services/ict/after-install.sh \
 --deb-systemd services/ict/ict.service \
 --maintainer "<iota@foundation>" \
@@ -29,10 +29,11 @@ fpm \
 -s dir -t rpm \
 -n ict \
 -a noarch \
---depends java-1.8.0-openjdk \
+--depends java-1.8.0-openjdk-headless \
 --rpm-systemd services/ict/ict.service \
 --after-install services/ict/after-install.sh \
 --maintainer "<iota@foundation>" \
 --description "Iota Controller AgentT" \
 --url "https://github.com/iotaledger/ict/" \
 --package packages/ .
+qq
