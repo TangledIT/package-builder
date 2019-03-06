@@ -36,4 +36,3 @@ fpm \
 --description "Iota Controller AgentT" \
 --url "https://github.com/iotaledger/ict/" \
 --package packages/ .
-qq
