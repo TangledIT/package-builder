@@ -1,0 +1,37 @@
+#!/bin/bash
+
+version=$1
+
+# Remove existing
+rm -f packages/iri-mon*
+
+# Create usr/bin in files
+mkdir -p services/iri-mon/files/usr/bin/
+
+# Download IRI-Mon
+curl -L https://github.com/TangledIT/iri-mon/releases/download/$version/iri-mon.gz | gunzip -c > services/iri-mon/files/usr/bin/iri-mon
+chmod +x services/iri-mon/files/usr/bin/iri-mon
+
+# Create DEB package
+fpm \
+--chdir services/iri-mon/files \
+--version $version \
+-s dir -t deb \
+-n iri-mon \
+-a noarch \
+--maintainer "<team@tangled.it>" \
+--description "IRI Monitoring tool" \
+--url "https://github.com/TangledIT/iri-mon" \
+--package packages/ .
+
+# Create RPM package
+fpm \
+--chdir services/iri-mon/files \
+--version $version \
+-s dir -t rpm \
+-n iri-mon \
+-a noarch \
+--maintainer "<team@tangled.it>" \
+--description "IRI Monitoring tool" \
+--url "https://github.com/TangledIT/iri-mon" \
+--package packages/ .
