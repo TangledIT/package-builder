@@ -18,7 +18,7 @@ The IRI requires Java, which is added as a subdependency of the package. It will
 ## Files
 - /usr/share/iri.ini.defaults
 - /usr/share/java.properties.defaults
-- /usr/bin/iri_install_db
+- /usr/bin/iri_install_snapshot
 - /var/lib/iri/iri.jar
 
 ## Configuration

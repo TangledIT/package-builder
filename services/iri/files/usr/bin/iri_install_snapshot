@@ -2,9 +2,9 @@
 
 if [[ ! $1 == "-f" ]]
 then
-    echo "Install Mainnet db"
+    echo "Install IRI Snapshot"
     echo "------------------"
-    echo "Installing the database will wipe your current database."
+    echo "Installing the snapshot will wipe your current database."
     read -p "Are you sure? [Yy/Nn] " -n 1 -r
     echo
 fi
@@ -18,23 +18,25 @@ then
     # Remove current database
     echo "Removing current database"
     rm -rf /var/lib/iri/db/*
+    rm -rf /var/lib/iri/mainnet*
+    rm -rf /var/lib/iri/spent*
     mkdir -p /var/lib/iri/db
 
     # Download database
     echo "Downloading database.. this could take a while"
-    curl http://downloads.tangled.it/mainnet-db.tar.gz -# --output /tmp/db.tar.gz
+    curl http://downloads.tangled.it/mainnet-snapshot.tar.gz -# --output /tmp/snapshot.tar.gz
 
     # Extracting database
     echo "Extracting database"
-    tar -C /var/lib/iri/db/ -zxf /tmp/db.tar.gz
+    tar -C /var/lib/iri/ -zxf /tmp/snapshot.tar.gz
 
     # Setting permissions
     echo "Changing permissions for database files"
-    chown -R iota:iota /var/lib/iri/db/
+    chown -R iota:iota /var/lib/iri/
 
     # Cleaning up
     echo "Cleaning up"
-    rm /tmp/db.tar.gz
+    rm /tmp/snapshot.tar.gz
 
     # Starting IRI
     echo "Starting IRI"
