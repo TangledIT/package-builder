@@ -6,6 +6,7 @@ version=$1
 rm -f packages/redix*
 
 # Download Redix
+mkdir -p services/redix/files/usr/bin/
 curl -L https://github.com/alash3al/redix/releases/download/v$version/redix_linux_amd64.zip | gunzip -c > services/redix/files/usr/bin/redix-server
 chmod +x services/redix/files/usr/bin/redix-server
 
